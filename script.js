@@ -19,3 +19,7 @@ categoryBlocks.forEach(block => {
         });
     });
 });
+    // Запретить перетаскивание на весь сайт
+    document.addEventListener('dragstart', (e) => {
+        e.preventDefault(); // Отменить действие по умолчанию
+    });

@@ -12,7 +12,7 @@ html, body {
     width: 100%;
 }
 body {
-    
+    user-select: none; /* Запретить выделение текста на всей странице */
     font-family: 'Roboto', sans-serif; /* Шрифт, похожий на Android */
     background-color: #8E8A8E; /* Цвет фона */
     overflow-x: hidden; /* Запрет горизонтальной прокрутки */
