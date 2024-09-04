@@ -39,7 +39,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 100px;
+    height: 160px;
     background-image: url('./img/headerfon.jpg');
     background-color: #2196F3; /* Цвет фона хедера */
     justify-content: flex-end;
@@ -52,19 +52,24 @@ body {
     font-size: 20px; /* Уменьшен размер шрифта */
     z-index: 1000; /* Слой выше остальных элементов */
     mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+
        
 }
 
 .folder {
-    margin-top: 100px; /* Отступ сверху для хедера */
+    margin-top: 150px; /* Отступ сверху для хедера */
     padding: 20px;
 }
+
 
 .app-icons {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 колонки */
     gap: 10px; /* Отступы между иконками */
-    
+     
+    flex-wrap: wrap; /* Разрешаем перенос элементов */
+   
+    justify-content: flex-start; /* Выравнивание элементов по началу */
 }
 
 .app-icon {
@@ -74,10 +79,10 @@ body {
     overflow: hidden; /* Скрытие переполнения */
     background-color: #F5F5F5; /* Цвет фона иконки */
     border-radius: 10px; /* Закругленные углы */
-    
-    background: linear-gradient(145deg, #e0e0e0, #a0a0a0); /* Градиент для серебряного эффекта */
-    box-shadow: 0 0 10px rgba(60, 149, 239, 0.941);
+    display: block; /* Убедитесь, что отображение по умолчанию block */
+    box-shadow: 0 0 15px rgba(60, 149, 239, 0.941);
     box-sizing: border-box;
+    
 }
 
 .app-icon img {
@@ -88,4 +93,84 @@ body {
     height: 100%; /* Полная высота */
     object-fit: cover; /* Масштабирование изображений */
     
+}
+
+.app-text {
+    position: absolute; /* Абсолютное позиционирование */
+    bottom: 0; /* Прижимаем текст к нижней части */
+    left: 0; /* Выравниваем текст по левому краю */
+    right: 0; /* Выравниваем текст по правому краю */
+    text-align: center; /* Центрируем текст */
+    background-color: rgba(0, 0, 0, 0.558); /* Полупрозрачный фон для текста */;
+    color: #FFFFFF; /* Цвет текста */
+    padding: 3px 0; /* Внутренние отступы */
+    max-height: 22px;
+
+}
+
+.horizontal-scrollbar {
+    z-index: 1001; /* Слой выше остальных элементов */
+    display: flex;
+    overflow-x: auto; /* Горизонтальная прокрутка */
+    height: 60px; /* Высота скролл-бара */
+    padding: 10px; /* Отступы вокруг */
+    align-items: center; /* Выравнивание по центру */
+    position: fixed; /* Фиксированное положение */
+    top: 90px; /* 10px ниже хедера (60px + 10px) */
+    left: 0;
+    right: 0;
+    mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+}
+
+
+.category-block {
+    text-decoration: none;
+    min-width: 120px; 
+    height: 30px;
+    margin-right: 15px; 
+    background: transparent; /* Прозрачный фон */
+    color: #fff; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    border: 2px solid #ad93e981; 
+    border-radius: 10px; 
+    position: relative; 
+    overflow: hidden; 
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
+    transition: background-color 0.3s, box-shadow 0.3s; /* Добавлено свойство box-shadow для плавного перехода */
+}
+
+.category-block::before {
+    content: '';
+    position: absolute;
+    top: -5px; 
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    border: 2px solid #00ffcc; 
+    border-radius: 10px; 
+    z-index: 0; 
+    transition: all 0.3s; 
+}
+
+.category-block:hover::before {
+    border-color: #ffcc00; 
+    box-shadow: 0 0 15px rgba(255, 204, 0, 0.5); 
+}
+
+.category-block:hover {
+    background-color: hsla(164, 74%, 73%, 0.242); 
+}
+
+/* Скрыть скроллбар в веб-браузерах на основе WebKit */
+::-webkit-scrollbar {
+    display: none; /* Скрыть скроллбар */
+}
+/* Для Firefox */
+.scrollable {
+    scrollbar-width: none; /* Скрыть скроллбар */
+}
+.hidden {
+    display: none; /* Скрыть элементы */
 }
