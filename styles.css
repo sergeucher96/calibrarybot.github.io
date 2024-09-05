@@ -56,6 +56,26 @@ body {
        
 }
 
+#animated-image {
+    width: 100px;
+    height: 100px;
+    animation: subtleBounce 3s infinite ease-in-out;
+    position: absolute;
+    right: 185px; /* Прижать блок к правому краю экрана */
+}
+
+@keyframes subtleBounce {
+    0% {
+        transform: scale(1) translateY(0);
+    }
+    50% {
+        transform: scale(1.05) translateY(-5px);
+    }
+    100% {
+        transform: scale(1) translateY(0);
+    }
+}
+
 .folder {
     margin-top: 150px; /* Отступ сверху для хедера */
     padding: 20px;
