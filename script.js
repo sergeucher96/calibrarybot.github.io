@@ -2,6 +2,8 @@
 const categoryBlocks = document.querySelectorAll('.category-block');
 // Получаем все иконки приложений
 const appIcons = document.querySelectorAll('.app-icon');
+// body
+const bodyElement = document.querySelector("body");
 
 categoryBlocks.forEach(block => {
     block.addEventListener('click', (e) => {
@@ -16,6 +18,11 @@ categoryBlocks.forEach(block => {
             } else {
                 icon.parentElement.style.display = 'none'; // Скрываем иконку
             }
+        });
+        // плавно скролим вверх
+        bodyElement.scroll({
+            top: 0,
+            behavior: 'smooth'
         });
     });
 });
