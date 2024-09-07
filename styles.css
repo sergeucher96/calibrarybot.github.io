@@ -100,10 +100,12 @@ body {
     background-color: #F5F5F5; /* Цвет фона иконки */
     border-radius: 10px; /* Закругленные углы */
     display: block; /* Убедитесь, что отображение по умолчанию block */
-    box-shadow: 0 0 15px rgba(60, 149, 239, 0.941);
+    box-shadow: 0 0 15px #12c0e8;
     box-sizing: border-box;
-    
+    outline: 3px double #0dc3ec71; /* Дополнительная рамка */
+
 }
+
 
 .app-icon img {
     position: absolute; /* Абсолютное позиционирование */
@@ -140,6 +142,7 @@ body {
     left: 0;
     right: 0;
     mask-image: linear-gradient(to bottom, black 90%, transparent 100%);
+    
 }
 
 
@@ -159,7 +162,32 @@ body {
     overflow: hidden; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); 
     transition: background-color 0.3s, box-shadow 0.3s; /* Добавлено свойство box-shadow для плавного перехода */
+    color: #fff;
+    background: linear-gradient(35deg, #ff00cc80, #18dcea55); /* Киберпанк-градиент */
+    border: 2px solid #3b5998; /* Основная рамка того же цвета, что и фон */
+    border-top-color: #ffffff; /* Светлая рамка сверху */
+    border-left-color: #ffffff; /* Светлая рамка слева */
+    border-right-color: #2c3e50; /* Тёмная рамка справа */
+    border-bottom-color: #2c3e50; /* Тёмная рамка снизу */
+    border-radius: 5px; /* Слегка закруглённые углы */
+    box-shadow: inset 1px 1px 0 #ffffff, /* Внутренняя светлая тень сверху и слева */
+                inset -1px -1px 0 #2c3e50; /* Внутренняя тёмная тень снизу и справа */
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
+
+
+.category-block:active {
+    background: linear-gradient(45deg, #3333ff95, #ff00cc); /* Меняем направление градиента при нажатии */
+    border-top-color: #2c3e50; /* Тёмная рамка сверху при нажатии */
+    border-left-color: #2c3e50; /* Тёмная рамка слева при нажатии */
+    border-right-color: #ffffff; /* Светлая рамка справа при нажатии */
+    border-bottom-color: #ffffff; /* Светлая рамка снизу при нажатии */
+    box-shadow: inset 1px 1px 0 #2c3e50, /* Внутренняя тёмная тень сверху и слева */
+                inset -1px -1px 0 #ffffff; /* Внутренняя светлая тень снизу и справа */
+}
+
 
 .category-block::before {
     content: '';
