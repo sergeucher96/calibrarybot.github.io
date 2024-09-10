@@ -145,7 +145,12 @@ body {
     
 }
 
-
+.category-count {
+    font-weight: bold;
+    color: #555;
+    margin-left: 5px;
+  }
+  
 .category-block {
     text-decoration: none;
     min-width: 120px; 

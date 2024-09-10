@@ -30,3 +30,5 @@ categoryBlocks.forEach(block => {
     document.addEventListener('dragstart', (e) => {
         e.preventDefault(); // Отменить действие по умолчанию
     });
+
+    
